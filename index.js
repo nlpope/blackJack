@@ -23,7 +23,7 @@ function calculateCards()
     let sum = firstCard + secondCard
 
     console.log(firstCard, secondCard)
-    if (sum < 21) {
+    if (sum <= 20) {
         console.log("Do you want to draw a new card? 🙂")
     } else if (sum === 21) {
         console.log("Woohoo! You've got Blackjack! 🥳")
