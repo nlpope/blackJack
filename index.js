@@ -1,5 +1,6 @@
 let firstCard = getRandomIntInclusive(2, 11)
 let secondCard = getRandomIntInclusive(2, 11)
+let sum = firstCard + secondCard
 
 function getRandomIntInclusive(min, max)
 {
@@ -9,3 +10,4 @@ function getRandomIntInclusive(min, max)
 }
 
 console.log(firstCard, secondCard)
+console.log(sum)
