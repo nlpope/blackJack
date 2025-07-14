@@ -1,4 +1,6 @@
-let admitted = true
+let admitted = false
+let isAlive = true
+let hasBlackjack = false
 
 
 function validateAge(age)
@@ -27,8 +29,11 @@ function calculateCards()
         console.log("Do you want to draw a new card? 🙂")
     } else if (sum === 21) {
         console.log("Woohoo! You've got Blackjack! 🥳")
+        hasBlackjack = true
     } else {
+        isAlive = false
         console.log("You're out of the game! 😭")
+        console.log("isAlive = " + isAlive)
     }
 }
 
@@ -44,5 +49,5 @@ function getRandomIntInclusive(min, max)
     return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
 }
 
-validateAge("20")
+validateAge(21)
 calculateCards()
