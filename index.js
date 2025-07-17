@@ -3,6 +3,12 @@ let isAlive = true
 let hasBlackjack = false
 
 
+function startGame()
+{
+    validateAge()
+}
+
+
 function validateAge(age)
 {
     if (!Number.isFinite(age)) { console.log("age must be a number"); admitted = false; return }
