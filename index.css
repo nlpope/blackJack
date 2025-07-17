@@ -1,11 +1,12 @@
 body 
 {
     background-image: url('felt-table.png');
-
     background-size: cover;
-
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 
     'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    color: white;
+    font-weight: bold;
 }
 
 h1 
@@ -15,5 +16,5 @@ h1
 
 #message-el
 {
-
+    font-style: italic;
 }
