@@ -37,13 +37,13 @@ function calculateCards()
 
     console.log(firstCard, secondCard)
     if (sum <= 20) {
-        message = "Do you want to draw a new card? 🙂"
+        message = "Do you want to draw a new card?"
     } else if (sum === 21) {
-        message = "Woohoo! You've got Blackjack! 🥳"
+        message = "Woohoo! You've got Blackjack!"
         hasBlackjack = true
     } else {
         isAlive = false
-        message = "You're out of the game! 😭"
+        message = "You're out of the game!"
     }
             
     messageEl.textContent = message
