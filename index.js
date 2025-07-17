@@ -3,6 +3,7 @@ let isAlive = true
 let hasBlackjack = false
 let message = ""
 let messageEl = document.getElementById("message-el")
+let sumEl = document.getElementById("sum-el")
 
 
 function startGame()
@@ -46,6 +47,7 @@ function calculateCards()
         message = "You're out of the game!"
     }
             
+    sumEl.textContent = sum
     messageEl.textContent = message
 }
 
