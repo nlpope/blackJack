@@ -60,6 +60,7 @@ MARKER: BACKGROUND METHODS
 
 function getRandomIntInclusive(min, max)
 {
+    console.log("getRando activated")
     const minCeiled = Math.ceil(min);
     const maxFloored = Math.floor(max);
     return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
