@@ -19,6 +19,12 @@ function startGame()
 }
 
 
+function newCard()
+{
+    console.log("drawing new card")
+}
+
+
 function validateAge(age)
 {
     if (!Number.isFinite(age)) { console.log("age must be a number"); admitted = false; return }
