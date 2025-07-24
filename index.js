@@ -25,9 +25,9 @@ function renderGame()
 
 function newCard()
 {
-    console.log("drawing new card")
     // let card = getRandomIntInclusive(2,11)
     let card = 7
+    console.log("drawing new card: " + card)
     sum += card
     renderGame()
 }
