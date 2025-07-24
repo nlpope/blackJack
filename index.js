@@ -1,5 +1,7 @@
 let admitted = false
 let isAlive = true
+let firstCard = getRandomIntInclusive(2, 11)
+let secondCard = getRandomIntInclusive(2, 11)
 let hasBlackjack = false
 let message = ""
 let messageEl = document.getElementById("message-el")
@@ -10,7 +12,7 @@ let cardsEl = document.getElementById("cards-el")
 function startGame()
 {
     console.log("startGame activated")
-    cardsEl.textContent = "Cards: " + firstCard + " " + secondCard
+    // cardsEl.textContent = "Cards: " + firstCard + " " + secondCard
     validateAge(21)
     calculateCards()
 }
@@ -30,13 +32,10 @@ function validateAge(age)
     messageEl.textContent = message
 }
 
-
 function calculateCards()
 {
     if (!admitted) { return }
 
-    let firstCard = getRandomIntInclusive(2, 11)
-    let secondCard = getRandomIntInclusive(2, 11)
     let sum = firstCard + secondCard
 
     console.log(firstCard, secondCard)
