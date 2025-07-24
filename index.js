@@ -10,7 +10,10 @@ let sumEl = document.querySelector("#sum-el")
 let cardsEl = document.getElementById("cards-el")
 
 
-function startGame()
+function startGame() { renderGame() }
+
+
+function renderGame()
 {
     // firstCard = getRandomIntInclusive(2, 11)
     // secondCard = getRandomIntInclusive(2, 11)
@@ -26,7 +29,7 @@ function newCard()
     // let card = getRandomIntInclusive(2,11)
     let card = 7
     sum += card
-    startGame()
+    renderGame()
 }
 
 
