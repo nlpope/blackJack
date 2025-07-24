@@ -1,7 +1,7 @@
 let admitted = false
 let isAlive = true
-let firstCard = getRandomIntInclusive(2, 11)
-let secondCard = getRandomIntInclusive(2, 11)
+let firstCard = 0
+let secondCard = 0
 let hasBlackjack = false
 let message = ""
 let messageEl = document.getElementById("message-el")
@@ -11,6 +11,8 @@ let cardsEl = document.getElementById("cards-el")
 
 function startGame()
 {
+    firstCard = getRandomIntInclusive(2, 11)
+    secondCard = getRandomIntInclusive(2, 11)
     console.log("startGame activated")
     // cardsEl.textContent = "Cards: " + firstCard + " " + secondCard
     validateAge(21)
