@@ -1,7 +1,7 @@
 let admitted = false
 let isAlive = true
-let firstCard = 10
-let secondCard = 4
+let firstCard = 0
+let secondCard = 0
 let hasBlackjack = false
 let message = ""
 let messageEl = document.getElementById("message-el")
@@ -11,7 +11,13 @@ let sumEl = document.querySelector("#sum-el")
 let cardsEl = document.getElementById("cards-el")
 
 
-function startGame() { validateAge(21); renderGame() }
+function startGame() 
+{ 
+    validateAge(21)
+    firstCard = 10
+    secondCard = 4
+    renderGame() 
+}
 
 
 function renderGame()
