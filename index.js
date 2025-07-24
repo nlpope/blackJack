@@ -9,6 +9,7 @@ let cardsEl = document.getElementById("cards-el")
 
 function startGame()
 {
+    console.log("startGame activated")
     cardsEl.textContent = "Cards: " + firstCard + " " + secondCard
     validateAge(21)
     calculateCards()
