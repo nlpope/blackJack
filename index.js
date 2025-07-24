@@ -1,18 +1,19 @@
 let admitted = false
 let isAlive = true
-let firstCard = 0
-let secondCard = 0
+let firstCard = 10
+let secondCard = 4
 let hasBlackjack = false
 let message = ""
 let messageEl = document.getElementById("message-el")
+let sum = 0
 let sumEl = document.querySelector("#sum-el")
 let cardsEl = document.getElementById("cards-el")
 
 
 function startGame()
 {
-    firstCard = getRandomIntInclusive(2, 11)
-    secondCard = getRandomIntInclusive(2, 11)
+    // firstCard = getRandomIntInclusive(2, 11)
+    // secondCard = getRandomIntInclusive(2, 11)
     cardsEl.textContent = "Cards: " + firstCard + " " + secondCard
     validateAge(21)
     calculateCards()
@@ -22,6 +23,9 @@ function startGame()
 function newCard()
 {
     console.log("drawing new card")
+    // let card = getRandomIntInclusive(2,11)
+    let card = 7
+    sum += card
 }
 
 
@@ -38,14 +42,14 @@ function validateAge(age)
 
     messageEl.textContent = message
 }
-//prob child
+
+
 function calculateCards()
 {
     if (!admitted) { return }
 
-    let sum = firstCard + secondCard
+    sum = firstCard + secondCard
 
-    console.log(firstCard, secondCard)
     if (sum <= 20) {
         message = "Do you want to draw a new card?"
     } else if (sum === 21) {
@@ -55,7 +59,7 @@ function calculateCards()
         isAlive = false
         message = "You're out of the game!"
     }
-    //prob child        
+
     sumEl.textContent = "Sum: " + sum
     messageEl.textContent = message
 }
