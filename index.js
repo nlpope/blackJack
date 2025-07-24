@@ -13,8 +13,7 @@ function startGame()
 {
     firstCard = getRandomIntInclusive(2, 11)
     secondCard = getRandomIntInclusive(2, 11)
-    console.log("startGame activated")
-    // cardsEl.textContent = "Cards: " + firstCard + " " + secondCard
+    cardsEl.textContent = "Cards: " + firstCard + " " + secondCard
     validateAge(21)
     calculateCards()
 }
@@ -33,7 +32,7 @@ function validateAge(age)
 
     messageEl.textContent = message
 }
-
+//prob child
 function calculateCards()
 {
     if (!admitted) { return }
@@ -50,7 +49,7 @@ function calculateCards()
         isAlive = false
         message = "You're out of the game!"
     }
-            
+    //prob child        
     sumEl.textContent = "Sum: " + sum
     messageEl.textContent = message
 }
@@ -62,7 +61,6 @@ MARKER: BACKGROUND METHODS
 
 function getRandomIntInclusive(min, max)
 {
-    console.log("getRando activated")
     const minCeiled = Math.ceil(min);
     const maxFloored = Math.floor(max);
     return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
