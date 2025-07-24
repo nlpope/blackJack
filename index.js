@@ -5,12 +5,13 @@ let secondCard = 4
 let hasBlackjack = false
 let message = ""
 let messageEl = document.getElementById("message-el")
+let newCard = 0
 let sum = 0
 let sumEl = document.querySelector("#sum-el")
 let cardsEl = document.getElementById("cards-el")
 
 
-function startGame() { renderGame() }
+function startGame() { validateAge(21); renderGame() }
 
 
 function renderGame()
@@ -18,7 +19,7 @@ function renderGame()
     // firstCard = getRandomIntInclusive(2, 11)
     // secondCard = getRandomIntInclusive(2, 11)
     cardsEl.textContent = "Cards: " + firstCard + " " + secondCard
-    validateAge(21)
+    sumEl.textContent = 
     calculateCards()
 }
 
@@ -26,9 +27,9 @@ function renderGame()
 function newCard()
 {
     // let card = getRandomIntInclusive(2,11)
-    let card = 7
-    console.log("drawing new card: " + card)
-    sum += card
+    newCard = 7
+    console.log("drawing new card: " + newCard)
+    sum += newCard
     renderGame()
 }
 
@@ -47,7 +48,7 @@ function validateAge(age)
     messageEl.textContent = message
 }
 
-
+// CONDENSE THIS INTO RENDERGAME()
 function calculateCards()
 {
     if (!admitted) { return }
