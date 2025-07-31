@@ -27,7 +27,7 @@ function renderGame()
     // firstCard = getRandomIntInclusive(2, 11)
     // secondCard = getRandomIntInclusive(2, 11)
     cardsEl.textContent = "Cards: " + cards[0] + " " + cards[1]
-    sumEl.textContent = 
+    // sumEl.textContent = 
     calculateCards()
 }
 
