@@ -2,13 +2,15 @@ let admitted = false
 let isAlive = true
 let firstCard = 0
 let secondCard = 0
+let cards = [firstCard, secondCard]
 let hasBlackjack = false
 let message = ""
-let messageEl = document.getElementById("message-el")
 let newCard = 0
 let sum = 0
-let sumEl = document.querySelector("#sum-el")
+
+let messageEl = document.getElementById("message-el")
 let cardsEl = document.getElementById("cards-el")
+let sumEl = document.querySelector("#sum-el")
 
 
 function startGame() 
