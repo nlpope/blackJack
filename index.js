@@ -12,22 +12,12 @@ let cardsEl = document.getElementById("cards-el")
 let sumEl = document.querySelector("#sum-el")
 
 
-function startGame() 
-{ 
-    console.log("starting game!!!")
-    validateAge(21)
-    firstCard = 10
-    secondCard = 4
-    renderGame() 
-}
-
-
 function validateAge(age)
 {
-    if (!Number.isFinite(age)) { console.log("age must be a number"); admitted = false; return }
+    if (!Number.isFinite(age)) { console.log("age must be a number"); return }
     if (age < 21) { 
         admitted = false
-        message = "You can not enter the club!"
+        message = "You cannot participate! Try again in " + (21 - age) + "years."
     } else { 
         admitted = true
         message = "Welcome!"
@@ -37,30 +27,37 @@ function validateAge(age)
 }
 
 
+function startGame() 
+{ 
+    validateAge(21)
+    if admitted { 
+        cards = []
+        for (let i = 0; i < 2; i++) { drawNewCard() }
+    }
+    
+    renderGame() 
+}
+
+
 function renderGame()
 {
-    // firstCard = getRandomIntInclusive(2, 11)
-    // secondCard = getRandomIntInclusive(2, 11)
-    cards[0] = firstCard
-    cards[1] = secondCard
     cardsEl.textContent = "Cards:"
 
     for (let i = 0; i < cards.length; i++) {
         cardsEl.textContent += " " + cards[i]
     }
 
-    calculateCards()
+    sumEl.textContent = "Sum: " + sum
+    messageEl.textContent = message
 }
 
 
 function drawNewCard()
 {
     let card = getRandomIntInclusive(2,11)
-    // newCard = 7
-    // sum += card
     cards.push(card)
     sum += card
-    renderGame()
+    calculateCards()
 }
 
 
@@ -78,8 +75,7 @@ function calculateCards()
         message = "You're out of the game!"
     }
 
-    sumEl.textContent = "Sum: " + sum
-    messageEl.textContent = message
+    renderGame()
 }
 
 /**
