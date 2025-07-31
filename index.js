@@ -33,7 +33,7 @@ function renderGame()
 }
 
 
-function newCard()
+function drawNewCard()
 {
     // let card = getRandomIntInclusive(2,11)
     newCard = 7
