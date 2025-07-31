@@ -5,7 +5,6 @@ let secondCard = 0
 let cards = [firstCard, secondCard]
 let hasBlackjack = false
 let message = ""
-let newCard = 0
 let sum = 0
 
 let messageEl = document.getElementById("message-el")
@@ -23,28 +22,6 @@ function startGame()
 }
 
 
-function renderGame()
-{
-    // firstCard = getRandomIntInclusive(2, 11)
-    // secondCard = getRandomIntInclusive(2, 11)
-    cards[0] = firstCard
-    cards[1] = secondCard
-    cardsEl.textContent = "Cards: " + cards[0] + " " + cards[1]
-    // sumEl.textContent = 
-    calculateCards()
-}
-
-
-function drawNewCard()
-{
-    // let card = getRandomIntInclusive(2,11)
-    newCard = 7
-    console.log("drawing new card: " + newCard)
-    sum += newCard
-    renderGame()
-}
-
-
 function validateAge(age)
 {
     if (!Number.isFinite(age)) { console.log("age must be a number"); admitted = false; return }
@@ -59,12 +36,37 @@ function validateAge(age)
     messageEl.textContent = message
 }
 
-// CONDENSE THIS INTO RENDERGAME()
+
+function renderGame()
+{
+    // firstCard = getRandomIntInclusive(2, 11)
+    // secondCard = getRandomIntInclusive(2, 11)
+    cards[0] = firstCard
+    cards[1] = secondCard
+    cardsEl.textContent = "Cards:"
+
+    for (let i = 0; i < cards.length; i++) {
+        cardsEl.textContent += " " + cards[i]
+    }
+
+    calculateCards()
+}
+
+
+function drawNewCard()
+{
+    let card = getRandomIntInclusive(2,11)
+    // newCard = 7
+    // sum += card
+    cards.push(card)
+    sum += card
+    renderGame()
+}
+
+
 function calculateCards()
 {
     if (!admitted) { return }
-
-    sum = firstCard + secondCard
 
     if (sum <= 20) {
         message = "Do you want to draw a new card?"
