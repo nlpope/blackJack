@@ -15,6 +15,7 @@ let sumEl = document.querySelector("#sum-el")
 
 function startGame() 
 { 
+    console.log("starting game!!!")
     validateAge(21)
     firstCard = 10
     secondCard = 4
