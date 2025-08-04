@@ -47,7 +47,7 @@ function drawNewCard()
     cards.push(card)
     sum += card
 
-    if (!admitted) { return }
+    if (!admitted || !isAlive) { return }
 
     if (sum <= 20) {
         message = "Do you want to draw a new card?"
