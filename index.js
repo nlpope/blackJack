@@ -1,8 +1,8 @@
 let admitted = false
-let isAlive = true
+let isAlive = false
 let firstCard = 0
 let secondCard = 0
-let cards = [firstCard, secondCard]
+let cards = []
 let hasBlackjack = false
 let message = ""
 let sum = 0
@@ -18,6 +18,7 @@ function startGame()
     if (admitted) { 
         cards = []
         sum = 0
+        isAlive = true
         for (let i = 0; i < 2; i++) { drawNewCard() }
     }
     
@@ -83,6 +84,9 @@ function getRandomIntInclusive(min, max)
 {
     const minCeiled = Math.ceil(min);
     const maxFloored = Math.floor(max);
-    return Math.floor(Math.random() * maxFloored + 1)
-    // return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+    let result = Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+
+    if (result > 10) { return 10 }
+    else if (result === 1) { return 11 } 
+    else { return result }
 }
