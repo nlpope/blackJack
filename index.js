@@ -12,6 +12,19 @@ let cardsEl = document.getElementById("cards-el")
 let sumEl = document.querySelector("#sum-el")
 
 
+function startGame() 
+{ 
+    validateAge(21)
+    if (admitted) { 
+        cards = []
+        sum = 0
+        for (let i = 0; i < 2; i++) { drawNewCard() }
+    }
+    
+    renderGame() 
+}
+
+
 function validateAge(age)
 {
     if (!Number.isFinite(age)) { console.log("age must be a number"); return }
@@ -27,43 +40,12 @@ function validateAge(age)
 }
 
 
-function startGame() 
-{ 
-    validateAge(21)
-    if (admitted) { 
-        cards = []
-        sum = 0
-        for (let i = 0; i < 2; i++) { drawNewCard() }
-    }
-    
-    renderGame() 
-}
-
-
-function renderGame()
-{
-    cardsEl.textContent = "Cards:"
-
-    for (let i = 0; i < cards.length; i++) {
-        cardsEl.textContent += " " + cards[i]
-    }
-
-    sumEl.textContent = "Sum: " + sum
-    messageEl.textContent = message
-}
-
-
 function drawNewCard()
 {
-    let card = getRandomIntInclusive(2,11)
+    let card = getRandomIntInclusive(1,13)
     cards.push(card)
     sum += card
-    calculateCards()
-}
 
-
-function calculateCards()
-{
     if (!admitted) { return }
 
     if (sum <= 20) {
@@ -79,6 +61,19 @@ function calculateCards()
     renderGame()
 }
 
+
+function renderGame()
+{
+    cardsEl.textContent = "Cards:"
+
+    for (let i = 0; i < cards.length; i++) {
+        cardsEl.textContent += " " + cards[i]
+    }
+
+    sumEl.textContent = "Sum: " + sum
+    messageEl.textContent = message
+}
+
 /**
 -------------------------------------------------------------
 MARKER: BACKGROUND METHODS
@@ -88,5 +83,6 @@ function getRandomIntInclusive(min, max)
 {
     const minCeiled = Math.ceil(min);
     const maxFloored = Math.floor(max);
-    return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+    return Math.floor(Math.random() * maxFloored + 1)
+    // return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
 }
