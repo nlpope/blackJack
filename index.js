@@ -1,13 +1,14 @@
 let admitted = false
 let isAlive = false
-let firstCard = 0
-let secondCard = 0
 let cards = []
 let hasBlackjack = false
 let message = ""
 let sum = 0
-let playerName = "Noah"
-let playerChips = 120
+
+let player = {
+    name: "Noah",
+    chips: 120
+}
 
 let messageEl = document.getElementById("message-el")
 let cardsEl = document.getElementById("cards-el")
@@ -15,12 +16,12 @@ let sumEl = document.querySelector("#sum-el")
 let playerEl = document.getElementById("player-el")
 
 
-
+// eslint-disable-next-line no-unused-vars
 function startGame() 
 { 
     validateAge(21)
     if (admitted) { 
-        playerEl.textContent = playerName + ": $" + playerChips
+        playerEl.textContent = player.name + ": $" + player.chips
         cards = []
         sum = 0
         isAlive = true
