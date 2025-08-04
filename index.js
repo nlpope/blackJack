@@ -47,7 +47,7 @@ function drawNewCard()
     cards.push(card)
     sum += card
 
-    if (!admitted || !isAlive) { return }
+    if (!admitted || !isAlive || hasBlackjack) { return }
 
     if (sum <= 20) {
         message = "Do you want to draw a new card?"
