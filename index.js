@@ -30,7 +30,7 @@ function validateAge(age)
 function startGame() 
 { 
     validateAge(21)
-    if admitted { 
+    if (admitted) { 
         cards = []
         for (let i = 0; i < 2; i++) { drawNewCard() }
     }
